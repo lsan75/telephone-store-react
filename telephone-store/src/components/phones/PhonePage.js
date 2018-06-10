@@ -1,5 +1,5 @@
 import React, { PropTypes } from "react";
-import PhoneApi from "../api/phoneApi";
+import PhoneApi from "../../api/phoneApi";
 import Phones from "./Phones";
 
 class PhonePage extends React.Component {

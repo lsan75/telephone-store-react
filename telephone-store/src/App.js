@@ -1,20 +1,13 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import PhonePage from "./components/PhonePage";
-import axios from "axios";
+import Header from "./components/common/Header";
 
+// RouteHandler is gone
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          <PhonePage />
-        </p>
+      <div>
+        <Header />
       </div>
     );
   }
