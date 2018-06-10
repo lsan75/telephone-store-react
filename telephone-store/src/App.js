@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Phones from "./components/Phones";
+import PhonePage from "./components/PhonePage";
 import axios from "axios";
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          <Phones />
+          <PhonePage />
         </p>
       </div>
     );
