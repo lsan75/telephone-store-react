@@ -42,7 +42,7 @@ var PhoneApi = {
       //The server would generate ids for new authors in a real app.
       //Cloning so copy returned is passed by value rather than by reference.
       phone.id = _generateId(phone);
-      phone.push(phone);
+      phones.push(phone);
     }
 
     return _clone(phone);
