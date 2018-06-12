@@ -2,6 +2,7 @@ import React, { PropTypes } from "react";
 import PhoneApi from "../../api/phoneApi";
 import Phones from "./Phones";
 import PhoneForm from "./PhoneForm";
+import { Redirect } from "react-router";
 
 class ManagePhonePage extends React.Component {
   constructor(props) {
@@ -11,7 +12,8 @@ class ManagePhonePage extends React.Component {
     //You should use this.setState() everywhere else
 
     this.state = {
-      phone: { id: "", name: "", price: "" }
+      phone: { id: "", name: "", price: "" },
+      shouldRedirect: false
     };
 
     this.setPhoneState = this.setPhoneState.bind(this);
@@ -31,10 +33,13 @@ class ManagePhonePage extends React.Component {
   savePhone = function(event) {
     event.preventDefault();
     PhoneApi.savePhone(this.state.phone);
+    this.setState({ shouldRedirect: true });
   };
 
   render() {
-    return (
+    return this.state.shouldRedirect ? (
+      <Redirect to={"/phones"} />
+    ) : (
       <div>
         <h1>Gérer les smartphones</h1>
         <PhoneForm
