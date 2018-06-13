@@ -3,6 +3,7 @@ import PhoneApi from "../../api/phoneApi";
 import Phones from "./Phones";
 import PhoneForm from "./PhoneForm";
 import { Redirect } from "react-router";
+import toastr from "toastr";
 
 class ManagePhonePage extends React.Component {
   constructor(props) {
@@ -33,6 +34,7 @@ class ManagePhonePage extends React.Component {
   savePhone = function(event) {
     event.preventDefault();
     PhoneApi.savePhone(this.state.phone);
+    toastr.success("Phone saved");
     this.setState({ shouldRedirect: true });
   };
 
